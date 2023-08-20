@@ -3,7 +3,12 @@ pkgs.mkShell {
   name = "python-shell";
   packages = with pkgs; [
     (let
-      python-pkgs = p: with p; [ requests setuptools ];
+      python-pkgs = p: with p; [
+        requests
+        responses
+        pytest
+        setuptools
+      ];
     in pkgs.python3.withPackages python-pkgs)
   ];
 }
