@@ -60,3 +60,63 @@ def test_get_issues_of_repo():
 
     assert output == expected_output
 
+
+@responses.activate
+def test_get_issues_of_org():
+    with open('tests/data/devopshq-repos.json', 'r') as f:
+        test_input = f.read()
+    responses.get(
+        'https://api.github.com/orgs/devopshq/repos',
+        json=json.loads(test_input),
+    )
+
+    with open('tests/data/devopshq-crosspm-issues.json', 'r') as f:
+        test_input_crosspm = f.read()
+    responses.get(
+        'https://api.github.com/repos/devopshq/crosspm/issues',
+        json=json.loads(test_input_crosspm),
+    )
+
+    with open('tests/data/devopshq-vspheretools-issues.json', 'r') as f:
+        test_input_vspheretools = f.read()
+    responses.get(
+        'https://api.github.com/repos/devopshq/vspheretools/issues',
+        json=json.loads(test_input_vspheretools),
+    )
+
+    with open('tests/data/devopshq-zabbix-youtrack-action-issues.json', 'r') as f:
+        test_input_zabbix = f.read()
+    responses.get(
+        'https://api.github.com/repos/devopshq/zabbix-youtrack-action/issues',
+        json=json.loads(test_input_zabbix),
+    )
+
+    g = GitHubIssues('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')
+    output = g.get_issues_of_org('devopshq')
+
+    expected_output = [
+        {
+            'repo': 'crosspm',
+            'issues': [
+                '123: Altsearch',
+                '122: [pre-commit.ci] pre-commit autoupdate'
+            ]
+        },
+        {
+            'repo': 'vspheretools',
+            'issues': [
+                '9: fail Travis build if tests fail'
+            ]
+        },
+        {
+            'repo': 'zabbix-youtrack-action',
+            'issues': [
+                '3: Create install script',
+                '2: Create good docs',
+                '1: Refactor code'
+            ]
+        }
+    ]
+
+    assert output == expected_output
+
