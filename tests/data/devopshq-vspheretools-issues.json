@@ -1,0 +1,74 @@
+[
+  {
+    "url": "https://api.github.com/repos/devopshq/vspheretools/issues/9",
+    "repository_url": "https://api.github.com/repos/devopshq/vspheretools",
+    "labels_url": "https://api.github.com/repos/devopshq/vspheretools/issues/9/labels{/name}",
+    "comments_url": "https://api.github.com/repos/devopshq/vspheretools/issues/9/comments",
+    "events_url": "https://api.github.com/repos/devopshq/vspheretools/issues/9/events",
+    "html_url": "https://github.com/devopshq/vspheretools/pull/9",
+    "id": 369480444,
+    "node_id": "MDExOlB1bGxSZXF1ZXN0MjIyNDExNjEy",
+    "number": 9,
+    "title": "fail Travis build if tests fail",
+    "user": {
+      "login": "fuzzmz",
+      "id": 1335181,
+      "node_id": "MDQ6VXNlcjEzMzUxODE=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1335181?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/fuzzmz",
+      "html_url": "https://github.com/fuzzmz",
+      "followers_url": "https://api.github.com/users/fuzzmz/followers",
+      "following_url": "https://api.github.com/users/fuzzmz/following{/other_user}",
+      "gists_url": "https://api.github.com/users/fuzzmz/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/fuzzmz/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/fuzzmz/subscriptions",
+      "organizations_url": "https://api.github.com/users/fuzzmz/orgs",
+      "repos_url": "https://api.github.com/users/fuzzmz/repos",
+      "events_url": "https://api.github.com/users/fuzzmz/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/fuzzmz/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "open",
+    "locked": false,
+    "assignee": null,
+    "assignees": [
+
+    ],
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2018-10-12T09:52:56Z",
+    "updated_at": "2018-10-12T09:52:56Z",
+    "closed_at": null,
+    "author_association": "NONE",
+    "active_lock_reason": null,
+    "draft": false,
+    "pull_request": {
+      "url": "https://api.github.com/repos/devopshq/vspheretools/pulls/9",
+      "html_url": "https://github.com/devopshq/vspheretools/pull/9",
+      "diff_url": "https://github.com/devopshq/vspheretools/pull/9.diff",
+      "patch_url": "https://github.com/devopshq/vspheretools/pull/9.patch",
+      "merged_at": null
+    },
+    "body": "Currently, due to a bug in Travis-CI, the build won't fail\r\nunless the last command in the script directive fails.\r\n\r\nThis means that if the lint or tests or coverage fail, the\r\nTravis CI build itself won't fail, in turn giving the false\r\nsense that everything is OK and the PR can be merged.\r\n\r\nIn order to work around this Travis CI limitation we need\r\nto explicitly ask for the shell to exit with an error\r\nimmediately if a command exits with a non-zero status.\r\n(set -e)",
+    "reactions": {
+      "url": "https://api.github.com/repos/devopshq/vspheretools/issues/9/reactions",
+      "total_count": 1,
+      "+1": 1,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "timeline_url": "https://api.github.com/repos/devopshq/vspheretools/issues/9/timeline",
+    "performed_via_github_app": null,
+    "state_reason": null
+  }
+]
