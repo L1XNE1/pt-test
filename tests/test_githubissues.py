@@ -6,7 +6,7 @@ from src.githubissues import GitHubIssues
 
 @responses.activate
 def test_get_list_of_repos():
-    with open('tests/data/devopshq_list_of_repos.json', 'r') as f:
+    with open('tests/data/devopshq-repos.json', 'r') as f:
         test_input = f.read()
 
     responses.get(
