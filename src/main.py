@@ -16,7 +16,7 @@ def print_issues_of_org(issues_dict):
 #token = os.environ['GITHUB_TOKEN']
 #with open('/run/secrets/github-token', 'r') as f:
 #    token = f.read()
-token = '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'
+token = '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'
 
 orgname = 'devopshq'
 
