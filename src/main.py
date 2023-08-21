@@ -13,10 +13,11 @@ def print_issues_of_org(issues_dict):
         print()
 
 
-#token = os.environ['GITHUB_TOKEN']
-#with open('/run/secrets/github-token', 'r') as f:
-#    token = f.read()
-token = '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'
+try:
+    token = os.environ['GITHUB_TOKEN']
+except KeyError:
+    print('Ошибка! Переменная GITHUB_TOKEN пуста.')
+    raise SystemExit(1)
 
 orgname = 'devopshq'
 
